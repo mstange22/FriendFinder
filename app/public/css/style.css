@@ -1,0 +1,66 @@
+h2,
+h3,
+h4 {
+    font-weight: bold;
+}
+
+#about-you {
+    margin-top: 0px;
+    margin-bottom: 15px;
+}
+
+#container {
+    width: 100%;
+    padding: 0px;
+}
+
+#home-header,
+#survey-header,
+#text-input,
+#survey-questions {
+    padding-top: 10px;
+    padding-bottom: 20px;
+    /* box-shadow: 5px 5px 20px #37474f; */
+}
+
+#survey-questions {
+    background-color: white;
+}
+
+#home-header,
+#survey-header {
+    border-radius: 0px;
+    background-color: #337ab7;
+    color: white;
+}
+
+#home-jumbotron,
+#text-input {
+    margin: 0 auto;
+    box-shadow: 5px 5px 20px #37474f;
+    width: 960px;
+    max-width: 95%;
+    margin-bottom: 20px;
+}
+
+#name,
+#photo {
+    margin: 0 auto;
+    width: 50%;
+    box-shadow: 5px 5px 20px #37474f;
+}
+
+#submit {
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 960px;
+    max-width: 95%;
+    box-shadow: 5px 5px 20px #37474f;
+}
+
+#footer-container {
+    width: 960px;
+    max-width: 95%;
+}

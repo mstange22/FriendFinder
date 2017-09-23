@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>FriendFinder</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+	 crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+	<link rel="shortcut icon" href="images/favicon-globe.ico">
+	<link rel="icon" href="images/favicon-globe.ico">
+	<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+	<div class="container text-center" id="container">
+
+		<!-- header -->
+		<div class="jumbotron" id="home-header">
+				<h1 class=""><span><i class="fa fa-globe" aria-hidden="true"></i></span> Friend Finder</h1>
+		</div>
+
+		<div class="jumbotron" id="home-jumbotron">
+			<h2 class="">Answer some questions. </h2>
+			<div id="photos-row-1">
+
+			</div>
+			<h2 class="">Find your match.</h2>
+			<div id="photos-row-2">
+				
+			</div>
+
+			<div class="">
+				<a href="/survey"><button type="button" class="btn btn-lg btn-primary"><h4><span><i class="fa fa-address-card" aria-hidden="true"></i></span> Take Survey</h4></button></a>
+			</div>
+
+		</div>
+
+		<footer class="footer">
+			<div class="footer-container">
+				<p><a href="/api/friends">API Friends List</a></p>
+			</div>
+		</footer>
+
+	</div>
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+	 crossorigin="anonymous"></script>
+	 <script>
+		 $.get("/api/friends", function(res) {
+			 for(var i = 0; i < 6; i++) {
+				
+				console.log(res[i]);
+
+				var newImg = $("<img>");
+				newImg.attr("src", res[i].photo);
+				newImg.css("width", "300px");
+				$("#photos-row-1").append(newImg); 
+			 }
+		 });
+	 </script>
+</body>
+
+</html>
