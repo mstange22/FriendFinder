@@ -22,6 +22,7 @@ function findMatch(user) {
 
 	var variance;
 	var bestVariance = 40;
+	var match;
 
 	for(i = 0; i < friendsArray.length; i++) {
 
@@ -29,19 +30,20 @@ function findMatch(user) {
 		if(user.gender) {
 
 			// compare against current friend's gender
-			if(user.gender === friendsArray[i].gender) {
+			if(user.gender === friendsArray[i].gender  || !friendsArray[i].gender) {
 
-				// continue if same gender
+				// continue if same gender or if no gender in current friend
 				continue;
 			}
 		}
 
 		variance = compareUserWithFriend(user.scores, friendsArray[i].scores);
 
-		if (variance < bestVariance) {
+		if (variance <= bestVariance) {
 		
 			bestVariance = variance;
 			match = friendsArray[i];
+			friendsArray[i].varFromUser = bestVariance;
 		}
 	}
 
